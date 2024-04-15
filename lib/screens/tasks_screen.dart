@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:todo/screens/add_task_screen.dart';
 
 import '../widgets/tasks_list.dart';
 
 class TasksScreen extends StatelessWidget {
   const TasksScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,9 @@ class TasksScreen extends StatelessWidget {
             Icons.add,
             color: Colors.white,
           ),
-          onPressed: () {}),
+          onPressed: () {
+            showModalBottomSheet(context: context, builder: (BuildContext context) => const AddTaskScreen());
+          }),
       body: Column(children: [
         Container(
           padding: const EdgeInsets.only(
